@@ -32,6 +32,7 @@ public class StarsAndStripes
 	   
    }
    
+   //small box function
    public void printASmallBox()
    {	
 	   printTwentyDashes();
@@ -43,7 +44,7 @@ public class StarsAndStripes
 	   printTwentyDashes();
 	   
    }
- 
+ //large box function
    public void printABigBox()
    { 	
 	   printTwentyDashes();

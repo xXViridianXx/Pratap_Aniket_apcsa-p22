@@ -11,5 +11,7 @@ public class Trap
 		
 		double area = .5*(base1 + base2) * height;
 		return area;
+		
+		//area is a double
 	}
 }

@@ -10,6 +10,8 @@ public class Line
 		
 		double getSlope = (y2-y1)/(x2-x1);
 		return getSlope;
+		
+		//slope is double
 	}
 
 }

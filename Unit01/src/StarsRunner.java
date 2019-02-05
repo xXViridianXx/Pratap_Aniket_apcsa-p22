@@ -19,6 +19,8 @@ public class StarsRunner
 	   flag.printASmallBox();
 	   flag.printTwoBlankLines();
 	   flag.printABigBox();
+	   
+	   //runs methods
       
    }
 }

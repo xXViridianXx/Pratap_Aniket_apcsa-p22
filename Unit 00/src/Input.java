@@ -20,6 +20,8 @@ public class Input
 		float floatOne, floatTwo;
 		short shortOne, shortTwo;
 
+		
+		//adidng inputs
 
 		System.out.print("Enter an integer :: ");
 		intOne = keyboard.nextInt();
@@ -49,7 +51,7 @@ public class Input
 		
 
 
-		//add in input for all variables
+		// input for all variables
 
 
 		System.out.println();

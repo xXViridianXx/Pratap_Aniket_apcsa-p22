@@ -19,7 +19,11 @@ public class AsciiArt
 		
 		for(int i = 0; i < 2; i++) {
 			System.out.println("|##             ##|" );
+			
+			//mane
 		}
+		
+		//Eyes
 		
 		System.out.println("|##   O    O    ##|" );
 		System.out.println("|##   > <> <    ##|");

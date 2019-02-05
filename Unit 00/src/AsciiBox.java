@@ -12,10 +12,12 @@ public class AsciiBox
 	{
 		System.out.println("Aniket Pratap \t  1/31/19 \n\n" );
 		
+		//+ for loop
 		for(int i = 0; i < 3; i++) 
 			{
 		System.out.println("+++++++++++++++++++++++++ " );
 			}
+		//A forloop
 		
 		for(int x = 0; x < 2; x++) 
 			{

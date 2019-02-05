@@ -10,5 +10,7 @@ public class Cube
 		
 		double area = 6*side*side;
 		return area;
+		
+		//returns double
 	}
 }

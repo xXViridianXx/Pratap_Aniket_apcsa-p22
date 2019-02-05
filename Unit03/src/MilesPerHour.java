@@ -53,7 +53,7 @@ public class MilesPerHour
 	public void print()
 	{
 		
-		System.out.println("the speed is " + String.format("%.0f", mph) + "mph\n" );
+		System.out.println("the speed is " + String.format("%.0f", mph) + " mph\n" );
 		//method
 	}
 	
