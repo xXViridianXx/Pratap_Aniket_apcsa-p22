@@ -21,7 +21,7 @@ public class Input
 		short shortOne, shortTwo;
 
 		
-		//adidng inputs
+		//adding inputs
 
 		System.out.print("Enter an integer :: ");
 		intOne = keyboard.nextInt();

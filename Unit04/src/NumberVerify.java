@@ -13,7 +13,7 @@ public class NumberVerify
 	public static boolean isOdd( int num )
 	{
 		
-		if (num % 2 == 1)
+		if (num % 2 == 1 || num % 2 == -1) //checking if odd
 		{
 			return true;
 		}
@@ -21,7 +21,7 @@ public class NumberVerify
 			return false;
 		}
 	}
-	public static boolean isEven( int num )
+	public static boolean isEven( int num ) //checking if even
 	{
 		if (num % 2== 0)
 		{
