@@ -22,7 +22,7 @@ public class StringRunner
 		
 		if (wordCheck.isEven() == true)
 		{
-			System.out.println(word + "this is even");
+			System.out.println(word + "this is even"); //output
 		}
 		else {
 			System.out.println(word + " this is odd");

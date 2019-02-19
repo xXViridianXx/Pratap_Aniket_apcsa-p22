@@ -28,7 +28,7 @@ public class StringEqualityRunner
 		String word2 = keyboard.nextLine();
 		
 		e.setWords(word, word2);
-		
+		//returns output
 		if (e.checkEquality() == true)
 		{
 			System.out.println(word + " has the same amount of letters as" +word2);

@@ -15,24 +15,24 @@ public class StringEquality
 	public StringEquality()
 	{
 		
-		setWords(wordOne, wordTwo);
+		setWords(wordOne, wordTwo); //initiates variables
 	}
 
 	public StringEquality(String one, String two)
 	{
 		wordOne = one;
-		wordTwo = two;
+		wordTwo = two;  //constructor
 		
 	}
 
 	public void setWords(String one, String two)
 	{
-		wordOne = one;
+		wordOne = one; //sets vars
 		wordTwo = two;
 		
 	}
 
-	public boolean checkEquality( )
+	public boolean checkEquality( ) //checking equality
 	{
 		if (wordOne.equals(wordTwo))
 		{

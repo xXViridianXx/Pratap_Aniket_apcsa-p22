@@ -16,24 +16,24 @@ public class StringOddOrEven
 	public StringOddOrEven()
 	{
 		
-	setString(word);	//
+	setString(word);	//instatiates vars
 	}
 
 	public StringOddOrEven(String s)
 	{
 		
-		word = s;
+		word = s;  //constructor
 	}
 
 	public void setString(String s)
 	{
 		
-		word = s;
+		word = s; //sets vars
 	}
 
  	public boolean isEven()
  	{
-		if (word.length() % 2 == 0)
+		if (word.length() % 2 == 0) //calculates
 		{
 			return true;
 		}
@@ -47,7 +47,7 @@ public class StringOddOrEven
 
  	public String toString()
  	{
- 		String output=word;
+ 		String output = word;
  		return output;
 	}
 }
