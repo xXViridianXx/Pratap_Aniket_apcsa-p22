@@ -8,7 +8,7 @@ public class WordRunner
 {
 	public static void main ( String[] args )
 	{
-		Word w = new Word("yag");
+		Word w = new Word("fortnite");
 		
 		System.out.println(w);
 		
