@@ -28,11 +28,29 @@ public class Perfect
 
 	public boolean isPerfect()
 	{
+		int sum = 0;
 		
-	if ()
+	for (int i = 1; i < number; i++)
+	{
+		if (number % i == 0 )
+		{
+			sum = sum + 1;
+		}
+	}
+	
+	if (sum == number)
+	{
+		return true;
+	}
+	else {
 		return false;
 	}
+	}
 
-	//add a toString	
+	//add a toString
+	public String toString()
+	{
+		return 
+	}
 	
 }
