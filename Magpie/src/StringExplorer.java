@@ -21,6 +21,7 @@ public class StringExplorer
 		System.out.println ("After toLowerCase(), sample = " + sample);
 		
 		//  Try other methods here:
+<<<<<<< HEAD
 		
 		String test = "Computer Science is the best, the greatest, and the most wonderful subject to study!";
 		
@@ -36,6 +37,8 @@ public class StringExplorer
 		}
 		
 		System.out.println(wordCount);
+=======
+>>>>>>> 459860760c3b1af61e80ae219fc04a6748efb1d9
 
 	}
 

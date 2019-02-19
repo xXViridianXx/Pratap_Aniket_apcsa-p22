@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author aniketpratap
+ *
+ */
+module Magpie {
+}

@@ -36,6 +36,13 @@ public class Magpie4
 			response = "Say something, please.";
 		}
 
+<<<<<<< HEAD
+=======
+		else if (findKeyword(statement, "no") >= 0)
+		{
+			response = "Why so negative?";
+		}
+>>>>>>> 459860760c3b1af61e80ae219fc04a6748efb1d9
 		else if (findKeyword(statement, "mother") >= 0
 				|| findKeyword(statement, "father") >= 0
 				|| findKeyword(statement, "sister") >= 0
@@ -43,6 +50,7 @@ public class Magpie4
 		{
 			response = "Tell me more about your family.";
 		}
+<<<<<<< HEAD
 		else if (findKeyword(statement, "dog") >= 0
 				|| findKeyword(statement, "cat") >= 0
 				|| findKeyword(statement, "dragon") >= 0
@@ -50,16 +58,22 @@ public class Magpie4
 		{
 			response = "Tell me more about your pets.";
 		}
+=======
+>>>>>>> 459860760c3b1af61e80ae219fc04a6748efb1d9
 
 		// Responses which require transformations
 		else if (findKeyword(statement, "I want to", 0) >= 0)
 		{
 			response = transformIWantToStatement(statement);
 		}
+<<<<<<< HEAD
 		else if (findKeyword(statement, "no") >= 0)
 		{
 			response = "Why so negative?";
 		}
+=======
+
+>>>>>>> 459860760c3b1af61e80ae219fc04a6748efb1d9
 		else
 		{
 			// Look for a two word (you <something> me)
@@ -96,6 +110,7 @@ public class Magpie4
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
+<<<<<<< HEAD
 		
 		
 		int psn = findKeyword (statement, "I want to", 0);
@@ -106,6 +121,12 @@ public class Magpie4
 		
 	}
 	
+=======
+		int psn = findKeyword (statement, "I want to", 0);
+		String restOfStatement = statement.substring(psn + 9).trim();
+		return "What would it mean to " + restOfStatement + "?";
+	}
+>>>>>>> 459860760c3b1af61e80ae219fc04a6748efb1d9
 
 	
 	
@@ -203,7 +224,11 @@ public class Magpie4
 	 */
 	private String getRandomResponse()
 	{
+<<<<<<< HEAD
 		final int NUMBER_OF_RESPONSES = 6;
+=======
+		final int NUMBER_OF_RESPONSES = 4;
+>>>>>>> 459860760c3b1af61e80ae219fc04a6748efb1d9
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -224,6 +249,7 @@ public class Magpie4
 		{
 			response = "You don't say.";
 		}
+<<<<<<< HEAD
 		else if (whichResponse == 4)
 		{
 			response = "Do you play minecraft?";
@@ -232,6 +258,8 @@ public class Magpie4
 		{
 			response = "Do you play fortnite?";
 		}
+=======
+>>>>>>> 459860760c3b1af61e80ae219fc04a6748efb1d9
 
 		return response;
 	}
