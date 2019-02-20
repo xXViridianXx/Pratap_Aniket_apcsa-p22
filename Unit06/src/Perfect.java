@@ -34,7 +34,7 @@ public class Perfect
 	{
 		if (number % i == 0 )
 		{
-			sum = sum + 1;
+			sum = sum + i;
 		}
 	}
 	
@@ -50,7 +50,9 @@ public class Perfect
 	//add a toString
 	public String toString()
 	{
-		return 
+		return "\n" +number+" ";
 	}
+
+	
 	
 }
