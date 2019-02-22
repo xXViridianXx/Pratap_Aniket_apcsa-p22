@@ -11,7 +11,7 @@ public class LetterRemover
 
 	public LetterRemover()
 	{
-		setRemover(sentence, lookFor);
+		setRemover("hello", 'a');
 	}
 
 	//add in second constructor

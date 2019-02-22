@@ -13,6 +13,19 @@ public class LetterRemoverRunner
 			sec.setRemover("I am Sam I am", 'a');
 			
 			System.out.println(sec);
+			
+			LetterRemover sec1 = new LetterRemover();
+			
+			sec.setRemover("ssssssssxssssesssssesss", 's');
+			
+			System.out.println(sec1);
+			
+LetterRemover sec2 = new LetterRemover();
+			
+			sec.setRemover("qwertyqwertyqwerty",  'a');
+			
+			System.out.println(sec2);
+			
 											
 	}
 }

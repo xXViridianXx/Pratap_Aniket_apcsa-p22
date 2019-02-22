@@ -10,13 +10,13 @@ public class Perfect
    
    
  public Perfect() {
-	 setPerfect(number);
+	setPerfect(0);
  }
 	//add constructors
    
    public Perfect(int n)
    {
-	  number = n;
+	  setPerfect(n);
    }
 
 	//add a set method
