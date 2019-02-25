@@ -20,9 +20,8 @@ public class TriangleFive
 
 	public TriangleFive(char c, int amt)
 	{
-		letter = c;
-		amount = amt;
-		
+		setLetter(c);
+		setAmount(amt);
 	}
 
 	public void setLetter(char c)
