@@ -10,18 +10,16 @@ public class RaySumLast
 		int sum = 0;
 		for (int i = 0; i < ray.length; i++)
 		{
-			if(ray[i] > ray.length-1)
+			if(ray[i] > ray[ray.length-1])
 			{
-				return sum+= ray[i];
+				 sum += ray[i];
 			}
-			else if (ray.length-1 > ray[i])
-			{
-				return -1;
+			
 			}
-		}
+			
+
 		
 		return sum;
 	}
-	
 
 }

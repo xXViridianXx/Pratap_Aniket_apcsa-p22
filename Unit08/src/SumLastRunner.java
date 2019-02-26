@@ -9,7 +9,7 @@ public class SumLastRunner
 	{		
 		
 		
-		int[] fornite = {-99,1,2,3,4,5,6,7,8,9,10,5};
+		int[] fortnite = {-99,1,2,3,4,5,6,7,8,9,10,5};
 		System.out.println(RaySumLast.go(fortnite));
 		
 	}
