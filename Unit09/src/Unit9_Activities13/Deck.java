@@ -13,7 +13,7 @@ public class Deck {
 	/**
 	 * cards contains all the cards in the deck.
 	 */
-	private List<Card> cards;
+	private Card[] cards;
 
 	/**
 	 * size is the number of not-yet-dealt cards.
@@ -32,7 +32,20 @@ public class Deck {
 	 * @param values is an array containing all of the card point values.
 	 */
 	public Deck(String[] ranks, String[] suits, int[] values) {
+
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		
+		
+		
+		for(int i = 0; i < ranks.length; i++ )
+		{
+			cards[i] = new Card(ranks[i],suits[i],values[i]);
+		}
+		
+		size = cards.length;
+		
+		shuffle();
+		
 	}
 
 
@@ -42,6 +55,12 @@ public class Deck {
 	 */
 	public boolean isEmpty() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		if(size == 0)
+		{
+			return true;
+		}
+		
+		return	false;
 	}
 
 	/**
@@ -50,6 +69,8 @@ public class Deck {
 	 */
 	public int size() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 2 *** */
+		
+		return size;
 	}
 
 	/**
