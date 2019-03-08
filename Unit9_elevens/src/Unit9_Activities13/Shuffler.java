@@ -9,29 +9,34 @@ public class Shuffler {
 	 * The number of consecutive shuffle steps to be performed in each call
 	 * to each sorting procedure.
 	 */
-	private static final int SHUFFLE_COUNT = 1;
+	private static final int SHUFFLE_COUNT = 2;
 
 	/**
 	 * The number of values to shuffle.
 	 */
-	private static final int VALUE_COUNT = 4;
+	private static final int VALUE_COUNT = 6;
 
 	/**
 	 * Tests shuffling methods.
 	 * @param args is not used.
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) 
+	{
+		
 		System.out.println("Results of " + SHUFFLE_COUNT +
 								 " consecutive perfect shuffles:");
-		int[] values1 = new int[VALUE_COUNT];
-		for (int i = 0; i < values1.length; i++) {
-			values1[i] = i;
-			}
+		
+		int[] val1 = new int[VALUE_COUNT];
+		
+		for (int i = 0; i < val1.length; i++) 
+		{
+			val1[i] = i;
+		}
 		for (int j = 1; j <= SHUFFLE_COUNT; j++) {
-			perfectShuffle(values1);
+			perfectShuffle(val1);
 			System.out.print("  " + j + ":");
-			for (int k = 0; k < values1.length; k++) {
-				System.out.print(" " + values1[k]);
+			for (int k = 0; k < val1.length; k++) {
+				System.out.print(" " + val1[k]);
 			}
 			System.out.println();
 		}
@@ -61,8 +66,30 @@ public class Shuffler {
 	 * the cards in one half with the cards in the other.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void perfectShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static void perfectShuffle(int[] values) 
+	{
+		int[] firstHalf = new int[VALUE_COUNT/2];
+		int[] secHalf = new int[VALUE_COUNT - VALUE_COUNT/2];
+		
+		int half = VALUE_COUNT/2;
+		
+		for( int i = 0; i <= (half); i++)
+		{
+			firstHalf[i] = values[i];
+		}
+		for( int i = 0; i <= (VALUE_COUNT - half); i++)
+		{
+			secHalf[i] = values[i + (half)];
+		}
+		for( int i = 0; i <= (half); i++)
+		{
+			values[2 * i] = secHalf[i];
+		}
+        for( int i = 0; i < half; i++ ) 
+        {
+            values[ 2 * i ] = secHalf[i];
+            values[ 2 * i + 1 ] = firstHalf[i];
+        }
 	}
 
 	/**
@@ -76,7 +103,14 @@ public class Shuffler {
 	 * searching for an as-yet-unselected card.
 	 * @param values is an array of integers simulating cards to be shuffled.
 	 */
-	public static void selectionShuffle(int[] values) {
-		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+	public static void selectionShuffle(int[] values) 
+	{
+		for( int i = VALUE_COUNT - 1; i >= 0; i-- ) 
+		{
+            int r = (int)(Math.random() * i);
+            int temp = values[r];
+            values[r] = values[i];
+            values[i] = temp;
+		}
 	}
 }
