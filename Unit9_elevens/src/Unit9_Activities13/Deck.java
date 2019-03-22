@@ -43,7 +43,7 @@ public class Deck {
             			for(int d = 0; d < ranks.length; d++ )
                     	{
 	            			int cardIndex = (suits.length)*d + c;
-	            			cards[cardIndex] = new Card(ranks[d],suits[c],values[d]);
+	            			cards[cardIndex] = new Card(ranks[d],suits[c],values[c]);
                     	}
             		}
             	size = cards.length;
@@ -94,13 +94,13 @@ public class Deck {
 	 */
 	public Card deal() 
 	{
-		if (isEmpty())
+		if (size > 0)
 		{
-			return null;
+			size--;
+			return cards[size];
 		}
-		Card c = cards[cards.length - 1];
-		size--;
-		return c;
+		else 
+		return null;
 	}
 
 	/**
