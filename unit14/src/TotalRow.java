@@ -6,9 +6,25 @@ import java.util.*;
 
 public class TotalRow
 {
-    public static List<Integer> getRowTotals( int[][] m )
+    public static int[] getRowTotals( int[][] m )
     {
-    	//add code here
-		return null;
+    	
+    	int[] stuff = new int[m.length];
+    	
+    	for(int i = 0; i < m.length; i++)
+    	{
+    		int count = 0;
+    	
+    		for(int j : m[i])
+    		{
+    			count += j;
+    		}
+    		
+    		stuff[i] = count;
+    	}
+    	
+    	
+    	
+		return stuff ;
     }
 }
