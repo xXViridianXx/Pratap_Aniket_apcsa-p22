@@ -17,7 +17,19 @@ public class WordRunner
 		int size = file.nextInt();
 		file.nextLine();
 		
+		Word [] words = new Word[size];
+		file.nextLine();
+		for (int i = 0; i < size; i++) {
+			words[i] = new Word(file.nextLine());
+		}
+		
+		Arrays.sort(words);
+		for (Word s: words)
+		{
+			System.out.println(s);
+		}
 
+		file.close();
 
 
 
