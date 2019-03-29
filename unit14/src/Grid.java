@@ -65,6 +65,15 @@ public class Grid
 	public String toString()
 	{
 		String output="";
-		return output;
-	}
+		
+		for (String[] i: grid) {
+			
+			for (String j: i) {
+				output += j + " ";
+			}
+			
+			output += "\n";
+		}
+		output += findMax(values) + " occurs the most";
+		return output;	}
 }
