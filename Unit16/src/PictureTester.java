@@ -9,9 +9,10 @@
 public class PictureTester
 {
   /** Method to test zeroBlue */
+	
   public static void testZeroBlue()
   {
-    Picture beach = new Picture("C:\\Users\\pratapa1028\\Desktop\\Unit16-Assignments-pixLab-20190417T181620Z-001\\Unit16-Assignments-pixLab\\images\\beach.jpg");
+    Picture beach = new Picture("C:\\Users\\pratapa1028\\Desktop\\Unit16-Assignments-pixLab-20190417T181620Z-001\\Unit16-Assignments-pixLab\\images\\water.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
@@ -59,12 +60,12 @@ public class PictureTester
     // and comment out the ones you don't want
     // to run
     testZeroBlue();
-    //testKeepOnlyBlue();
-    //testKeepOnlyRed();
-    //testKeepOnlyGreen();
-    //testNegate();
-    //testGrayscale();
-    //testFixUnderwater();
+    testKeepOnlyBlue();
+    testKeepOnlyRed();
+    testKeepOnlyGreen();
+    testNegate();
+    testGrayscale();
+    testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
@@ -81,4 +82,34 @@ public class PictureTester
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
   }
+
+private static void testGrayscale() {
+	// TODO Auto-generated method stub
+	
+}
+
+private static void testNegate() {
+	// TODO Auto-generated method stub
+	
+}
+
+private static void testKeepOnlyGreen() {
+	// TODO Auto-generated method stub
+	
+}
+
+private static void testKeepOnlyRed() {
+	// TODO Auto-generated method stub
+	
+}
+
+private static void testKeepOnlyBlue() {
+	// TODO Auto-generated method stub
+	
+}
+
+private static void testFixUnderwater() {
+	// TODO Auto-generated method stub
+	
+}
 }

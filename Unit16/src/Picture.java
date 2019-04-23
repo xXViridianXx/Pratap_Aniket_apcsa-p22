@@ -148,7 +148,20 @@ public class Picture extends SimplePicture
   
   public void fixUnderwater()
   {
-	  
+	  Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels)
+	    {
+	      for (Pixel pixelObj : rowArray)
+	      {
+	    	  
+	    	  if(pixelObj.getRed() > 20 && pixelObj.getBlue() < 170 )
+	    	  {	  
+	        pixelObj.setRed(0);
+	        pixelObj.setGreen(0);
+	        pixelObj.setBlue(0);
+	    	  }
+	      }
+	    }
   }
   
   
