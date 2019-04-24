@@ -52,6 +52,14 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testMirrorVerticalRighttToLeft()
+  {
+	  Picture caterpillar = new Picture("src\\imagez\\caterpillar.jpg");
+	    caterpillar.explore();
+	    caterpillar.mirrorVerticalRightToLeft();
+	    caterpillar.explore();
+  }
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -59,13 +67,13 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
-    testKeepOnlyBlue();
-    testKeepOnlyRed();
-    testKeepOnlyGreen();
-    testNegate();
-    testGrayscale();
-    testFixUnderwater();
+    //testZeroBlue();
+    //testKeepOnlyBlue();
+    //testKeepOnlyRed();
+    //testKeepOnlyGreen();
+    //testNegate();
+    //testGrayscale();
+    //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
     //testMirrorArms();
@@ -81,6 +89,8 @@ public class PictureTester
     //testSetRedToHalfValueInTopHalf();
     //testClearBlueOverValue(200);
     //testGetAverageForColumn(0);
+	  //testMirrorVerticalRighttToLeft();
+	  testMirrorVertical();
   }
 
 private static void testGrayscale() {
@@ -110,6 +120,11 @@ private static void testKeepOnlyBlue() {
 
 private static void testFixUnderwater() {
 	// TODO Auto-generated method stub
-	
+	Picture beach = new Picture("C:\\Users\\pratapa1028\\Desktop\\Unit16-Assignments-pixLab-20190417T181620Z-001\\Unit16-Assignments-pixLab\\images\\water.jpg");
+    beach.explore();
+    beach.modifyColors(3, .9, .9);
+    beach.explore();
 }
+
+
 }
