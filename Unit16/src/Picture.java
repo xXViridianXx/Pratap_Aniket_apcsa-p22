@@ -236,10 +236,77 @@ public class Picture extends SimplePicture
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
+        count++;
       }
     }
+    
+    System.out.println(count);
   }
   
+  public void mirrorHorizontalBotToTop()
+  {
+
+	  Pixel[][] pixels = this.getPixels2D();
+	 	 Pixel topPixel = null;
+	 	 Pixel bottomPixel = null;
+	 	 int width = pixels[0].length;
+	 	 for (int row = pixels.length / 2 - 1; row < pixels.length; row++)
+	 	 {
+	 	   for (int col = row; col < width - 1; col++)
+	 	   {
+	 		   	topPixel = pixels[row][col];
+	 	        bottomPixel = pixels[pixels.length - 1 - row][col];
+	 	        bottomPixel.setColor(topPixel.getColor());
+	 	    }
+	 	 }
+	    
+  }
+  
+ public void mirrorDiagonal()
+ {
+	 Pixel[][] pixels = this.getPixels2D();
+ 	 Pixel firstPixel = null;
+ 	 Pixel secondPixel = null;
+ 	 int width = pixels[0].length;
+ 	 int height = pixels.length;
+ 	 if (width > height){
+ 		 width = (height - 1);
+ 	 }
+ 	 else if (width < pixels.length){
+ 		 height = (width - 1);
+ 	 }
+ 	 
+ 	 for (int row = 0; row < height; row++){
+ 		 for (int col = 0; col < width; col++){
+ 			 firstPixel = pixels[col][row];
+ 			 secondPixel = pixels[row][col];
+ 			 secondPixel.setColor(firstPixel.getColor());
+ 		 }
+ 	 }
+	 }
+ 
+ public void mirrorArms()
+ {
+
+	 int mirrorPoint = 195;
+	  Pixel upPixel = null;
+	  Pixel downPixel = null;
+	  Pixel[][] pixels = this.getPixels2D();
+	    
+	  // loop through the rows
+	  for (int row = 163; row < mirrorPoint; row++)
+	  {
+	    // loop from 13 to just before the mirror point
+	    for (int col = 100; col < 300; col++)
+	    {
+	    	upPixel = pixels[row][col];      
+	        downPixel = pixels[mirrorPoint - row + mirrorPoint][col];
+	        downPixel.setColor(upPixel.getColor()); 
+	      }
+	  }
+ }
+
+ 	 
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture
