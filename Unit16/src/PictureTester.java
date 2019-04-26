@@ -47,7 +47,7 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
+    Picture swan = new Picture("src/imagez/swan.jpg");
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -84,6 +84,13 @@ public class PictureTester
 	    snowman.explore();
   }
 
+  public static void testMirrorGull()
+  {
+	  Picture snowman = new Picture("src\\\\imagez\\\\caterpillar.jpg");
+	    snowman.explore();
+	    snowman.mirrorGull();
+	    snowman.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -100,11 +107,11 @@ public class PictureTester
     //testFixUnderwater();
     //testMirrorVertical();
     //testMirrorTemple();
-    testMirrorArms();
+    //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
-    //testCopy();
+    //testCollage();
     //testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
