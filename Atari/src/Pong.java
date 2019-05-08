@@ -58,16 +58,20 @@ ball = new Ball(400, 300, 10, 10, 3, 3, Color.RED);
 		
 atariPaddle = new Paddle(360, 400, 40, 40);
 
+
 bars = new ArrayList<Bar>();
-createNBars(30, 5, 0);
-createNBars(30, 5, 520);
-createNBarsVertical(30, 5, 0);
-createNBarsVertical(30, 5, 750);
-createNBars(30, 5, 25);
-createNBars(30, 5, 495);
-createNBarsVertical(30, 5, 25);
-createNBarsVertical(30, 5, 715);
+createNBars(20, 5, 0);
+createNBars(20, 5, 520);
 keys = new boolean[5];
+
+
+
+
+
+
+
+
+
 
 
 setBackground(Color.WHITE);
@@ -80,12 +84,8 @@ addKeyListener(this);			//starts the key thread to log key strokes
    public void update(Graphics window){
 	   paint(window);
    }
-   public void reset() {
-	   
-	   ball.setX(360);
-	   ball.setY(300);
-	   ball.setXSpeed((int) (Math.random()*6));
-   }
+   
+   
 
    public void paint(Graphics window)
    {
@@ -101,6 +101,8 @@ addKeyListener(this);			//starts the key thread to log key strokes
 	 		//we will draw all changes on the background image
 	 		Graphics graphToBack = back.createGraphics();
 	 		//graphToBack.clearRect(50, 50, 700, 500);
+	 		
+	 		
 	 		if (i == 0) {
 	 			atariPaddle.draw(graphToBack);
 	 		}
@@ -146,13 +148,13 @@ addKeyListener(this);			//starts the key thread to log key strokes
 	 		if (keys[4] == true) {
 	 		}
 	 		if (ball.getY() >= 600) {
-	 			reset();
+	 			ball.setYSpeed(-ball.getYSpeed());
 	 		}
 	 		
 	 		if(!(ball.getX()>=0 && ball.getX()<=800))
 	 		{
 	 			
-	 			ball.setYSpeed(-ball.getYSpeed());
+	 			ball.setXSpeed(-ball.getXSpeed());
 
 	 		}
 	 		if (ball.getX() + ball.getXSpeed() >= atariPaddle.getX() && ball.getX() + ball.getXSpeed() <= atariPaddle.getX() + atariPaddle.getWidth() && ball.getY() + ball.getYSpeed()<= atariPaddle.getY()+atariPaddle.getHeight() && ball.getY()+ball.getYSpeed() >= atariPaddle.getY())
@@ -161,14 +163,15 @@ addKeyListener(this);			//starts the key thread to log key strokes
 	 			atariPaddle.draw(graphToBack);
 
 	 		} // Hit condition
-	 		if(!(ball.getY()>=0))
+	 		if(!(ball.getY()>=0 ))
 	 		{
 	 			System.out.println(ball.getYSpeed()+ " " + ball.getXSpeed());
 	 			ball.setYSpeed(Math.abs(ball.getYSpeed()));
 	 		}
-	 		if(ball.getX()-ball.getXSpeed() <= 0 || ball.getX() + ball.getXSpeed() >= 800)
+	 		if(ball.getX() <= 0 || ball.getX()  >= 800)
 	 		{
-	 			reset();
+	 			ball.setXSpeed(Math.abs(ball.getXSpeed()));
+	 			
 	 		}
 	 		
 	 		/**
@@ -240,6 +243,20 @@ addKeyListener(this);			//starts the key thread to log key strokes
 	 		graphToBack.drawString("leftscore = " + leftScore, 600, 540);
 	 		*/
 	 		twoDGraph.drawImage(back, null, 0, 0);
+	 		
+	 		if(bars.isEmpty())
+	 		{
+	 			bars = new ArrayList<Bar>();
+	 			createNBars(20, 5, 0);
+	 			createNBars(20, 5, 520);
+	 			createNBarsVertical(20, 5, 0);
+	 			createNBarsVertical(20, 5, 750);
+	 			createNBars(20, 5, 25);
+	 			createNBars(20, 5, 495);
+	 			createNBarsVertical(20, 5, 25);
+	 			createNBarsVertical(20, 5, 715);
+	 			keys = new boolean[5];
+	 		}
 	 	}
 
 	 	public void keyPressed(KeyEvent e)
