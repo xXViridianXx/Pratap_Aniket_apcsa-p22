@@ -1,7 +1,3 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -17,14 +13,9 @@ import java.util.ArrayList;
 public class OuterSpace extends Canvas implements KeyListener, Runnable
 {
 	private Ship ship;
-	private Alien alienOne;
-	private Alien alienTwo;
-
-	/* uncomment once you are ready for this part
-	 *
-   private AlienHorde horde;
+	private AlienHorde horde;
 	private Bullets shots;
-	*/
+	private boolean game = true;
 
 	private boolean[] keys;
 	private BufferedImage back;
@@ -37,6 +28,10 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 
 		//instantiate other instance variables
 		//Ship, Alien
+		ship = new Ship(400, 300, 50, 50, 1);
+		shots = new Bullets();
+		shots.add(new Ammo(-10,-10,0));
+		horde = new AlienHorde(30);
 
 		this.addKeyListener(this);
 		new Thread(this).start();
@@ -63,22 +58,64 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		//we will draw all changes on the background image
 		Graphics graphToBack = back.createGraphics();
 
+		graphToBack.setColor(Color.BLACK);
+		graphToBack.fillRect(0,0,800,600);
+		graphToBack.setColor(Color.WHITE);
+		graphToBack.drawString("StarFighter ", 25, 50 );
+
+		if(ship.getX()>=-10 && keys[0] == true)
+		{
+			ship.move("LEFT");
+		}
+		if(ship.getX()<=715 && keys[1] == true) 
+		{
+			ship.move("RIGHT");
+		}
+		if(ship.getY()>=-10 && keys[2] == true)
+		{
+			ship.move("UP");
+		}
+		if(ship.getY()<=470 && keys[3] == true)
+		{
+			ship.move("DOWN");
+		}
+		if (keys[4] == true) {
+            shots.add(new Ammo(ship.getX()+25, ship.getY()+25, 3));
+            keys[4] = false;
+        }
+		
 		graphToBack.setColor(Color.BLUE);
 		graphToBack.drawString("StarFighter ", 25, 50 );
 		graphToBack.setColor(Color.BLACK);
 		graphToBack.fillRect(0,0,800,600);
 
-		if(keys[0] == true)
+		ship.draw(graphToBack);
+		horde.drawEmAll(graphToBack);
+		shots.drawEmAll(graphToBack);
+		shots.moveEmAll();
+		horde.moveEmAll();
+		horde.removeDeadOnes(shots.getList());
+
+		if (horde.gameIsWon()==true)
 		{
-			ship.move("LEFT");
+	
+			graphToBack.clearRect(0, 0, 800, 600);
+			graphToBack.setColor(Color.RED);
+			graphToBack.drawString("YOU WON!", 350, 300);
 		}
-
-		//add code to move Ship, Alien, etc.
-
-
-		//add in collision detection to see if Bullets hit the Aliens and if Bullets hit the Ship
-
-
+		
+		if (horde.touchingShip(graphToBack, ship)) {
+			game = false;
+		}
+		
+		if (game == false)
+		{
+			graphToBack.clearRect(0, 0, 800, 600);
+			//setBackground(Color.black);
+			graphToBack.setColor(Color.RED);
+			graphToBack.drawString("YOU LOSE!", 350, 300);
+		}
+		
 		twoDGraph.drawImage(back, null, 0, 0);
 	}
 
@@ -149,7 +186,7 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
          }
       }catch(Exception e)
       {
+    	  System.out.println("Help");
       }
   	}
 }
-
