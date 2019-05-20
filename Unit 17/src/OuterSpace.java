@@ -100,22 +100,24 @@ public class OuterSpace extends Canvas implements KeyListener, Runnable
 		{
 	
 			graphToBack.clearRect(0, 0, 800, 600);
-			graphToBack.setColor(Color.RED);
+			graphToBack.setColor(Color.WHITE);
 			graphToBack.drawString("YOU WON!", 350, 300);
 		}
 		
-		if (horde.touchingShip(graphToBack, ship)) {
+		
+		
+			
+		
+		if (horde.touchingShip(graphToBack, ship)   ) {
 			game = false;
 		}
 		
 		if (game == false)
 		{
 			graphToBack.clearRect(0, 0, 800, 600);
-			//setBackground(Color.black);
-			graphToBack.setColor(Color.RED);
+			graphToBack.setColor(Color.WHITE);
 			graphToBack.drawString("YOU LOSE!", 350, 300);
 		}
-		
 		twoDGraph.drawImage(back, null, 0, 0);
 	}
 

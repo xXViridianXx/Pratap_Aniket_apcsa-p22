@@ -1,7 +1,3 @@
-//(c) A+ Computer Science
-//www.apluscompsci.com
-//Name -
-
 import java.io.File;
 import java.net.URL;
 import java.awt.Color;
@@ -21,12 +17,13 @@ public class Ship extends MovingThing
 
 	public Ship(int x, int y)
 	{
-	   //add code here
+	   super(x, y);
 	}
 
 	public Ship(int x, int y, int s)
 	{
-	   //add code here
+	   super(x, y);
+	   speed = s;
 	}
 
 	public Ship(int x, int y, int w, int h, int s)
@@ -35,29 +32,42 @@ public class Ship extends MovingThing
 		speed=s;
 		try
 		{
-			URL url = getClass().getResource("/images/ship.jpg");
-			image = ImageIO.read(url);
+			
+			image = ImageIO.read(new File("src/ship.jpg"));
 		}
 		catch(Exception e)
 		{
-			//feel free to do something here
+			System.out.println("pic not found");
 		}
 	}
 
 
 	public void setSpeed(int s)
 	{
-	   //add more code
+	   speed = s;
 	}
 
 	public int getSpeed()
 	{
-	   return 0;
+	   return speed;
 	}
 
 	public void move(String direction)
 	{
-		//add code here
+		switch (direction) {
+			case "LEFT":
+				super.setX(super.getX() - getSpeed());
+				break;
+			case "RIGHT":
+				super.setX(super.getX() + getSpeed());
+				break;
+			case "UP":
+				super.setY(super.getY() - getSpeed());
+				break;
+			case "DOWN":
+				super.setY(super.getY() + getSpeed());
+				break;
+		}
 	}
 
 	public void draw( Graphics window )
