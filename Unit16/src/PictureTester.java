@@ -18,6 +18,21 @@ public class PictureTester
     beach.explore();
   }
   
+<<<<<<< HEAD
+=======
+  public static void testEncodeAndDecode()
+  {
+	  Picture beach = new Picture("src\\imagez\\beach.jpg");
+	  Picture code = new Picture("src\\imagez\\msg.jpg");
+	  beach.explore();
+	  code.explore();
+	  beach.encode(code);
+	  beach.explore();
+	  beach.decode();
+	  beach.explore();
+	  
+  }
+>>>>>>> fdbf8cbdc3f95a01c99ac4bdc551501f237a4902
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
@@ -125,6 +140,7 @@ public class PictureTester
 	//testMirrorVertical();
 	//testMirrorHorizontalBotToTop();
 	//testMirrorDiagonal();
+	  testEncodeAndDecode();
    
   }
 
