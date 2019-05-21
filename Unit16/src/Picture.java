@@ -15,6 +15,9 @@ import java.util.List; // resolves problem with java.awt.List and java.util.List
  */
 public class Picture extends SimplePicture 
 {
+	
+	private int blue = 0;
+	private int red = 0;
   ///////////////////// constructors //////////////////////////////////
   
   /**
@@ -157,21 +160,30 @@ public class Picture extends SimplePicture
   {
   for (int col = 0; col < this.getWidth(); col++)
   {
-  // if the current pixel red is odd make it even
+  
   currPixel = currPixels[row][col];
-  if (Math.hypot(currPixel.getRed(), currPixel.getBlue()) == currPixel.getGreen())
-  currPixel.setBlue(currPixel.getBlue() - 1);
+  	blue = currPixel.getBlue();
+	red = currPixel.getRed();
+  if (Math.hypot((int)currPixel.getRed(), (int)currPixel.getBlue()) != (int)currPixel.getGreen())
+	   
+  currPixel.setBlue((int)(currPixel.getGreen()/Math.sqrt(2)));
+  currPixel.setRed((int)(currPixel.getGreen()/Math.sqrt(2)));
   messagePixel = messagePixels[row][col];
   if (messagePixel.colorDistance(Color.BLACK) < 50)
   {
-  currPixel.setBlue(currPixel.getBlue() + 1);
+	  currPixel.setBlue(blue);
+	  currPixel.setRed(red);
   count++;
+  
   }
   }
   }
   System.out.println(count);
   }
+  
+  
   /**
+   
   * Method to decode a message hidden in the
   * red value of the current picture
   * @return the picture with the hidden message
@@ -193,8 +205,9 @@ public class Picture extends SimplePicture
   {
   currPixel = pixels[row][col];
   messagePixel = messagePixels[row][col];
-  if (Math.hypot(currPixel.getRed(), currPixel.getBlue()) == currPixel.getGreen())
+  if (Math.hypot((int)currPixel.getRed(), (int)currPixel.getBlue()) == (int)currPixel.getGreen())
   {
+	  
   messagePixel.setColor(Color.BLACK);
   count++;
   }

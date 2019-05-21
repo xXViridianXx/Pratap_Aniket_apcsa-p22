@@ -18,8 +18,6 @@ public class PictureTester
     beach.explore();
   }
   
-<<<<<<< HEAD
-=======
   public static void testEncodeAndDecode()
   {
 	  Picture beach = new Picture("src\\imagez\\beach.jpg");
@@ -32,7 +30,7 @@ public class PictureTester
 	  beach.explore();
 	  
   }
->>>>>>> fdbf8cbdc3f95a01c99ac4bdc551501f237a4902
+
   
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
