@@ -21,7 +21,7 @@ public class PictureTester
   public static void testEncodeAndDecode()
   {
 	  Picture beach = new Picture("src\\imagez\\beach.jpg");
-	  Picture code = new Picture("src\\imagez\\apple_icon.jpg");
+	  Picture code = new Picture("src\\imagez\\msg.jpg");
 	  beach.explore();
 	  code.explore();
 	  beach.encode(code);
